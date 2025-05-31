@@ -10,7 +10,6 @@ function App() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -35,7 +34,6 @@ function App() {
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
-    setError(null);
 
     try {
       const response = await axios.post(`${API_URL}/api/chat`, {
@@ -53,7 +51,6 @@ function App() {
     } catch (error: any) {
       console.error('Error sending message:', error);
       const errorMessage = error.response?.data?.detail || 'An error occurred while sending your message.';
-      setError(errorMessage);
       
       // Add error message to chat
       const errorChatMessage: Message = {
