@@ -1,0 +1,60 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #E5DDD5;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Message bubble styles */
+.message-bubble {
+  position: relative;
+}
+
+.message-bubble::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.message-bubble.user::before {
+  right: -8px;
+  border-width: 0 0 8px 8px;
+  border-color: transparent transparent #25D366 transparent;
+}
+
+.message-bubble.assistant::before {
+  left: -8px;
+  border-width: 0 8px 8px 0;
+  border-color: transparent #ffffff transparent transparent;
+} 
