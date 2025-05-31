@@ -18,6 +18,11 @@ export default defineConfig({
     port: 5173,
     host: true,
     strictPort: true,
+    allowedHosts: [
+      'renderhostingtestfrontend.onrender.com',
+      'localhost',
+      '127.0.0.1'
+    ]
   },
   build: {
     outDir: 'dist',
