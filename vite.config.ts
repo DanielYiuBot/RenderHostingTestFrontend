@@ -21,7 +21,9 @@ export default defineConfig({
     allowedHosts: [
       'renderhostingtestfrontend.onrender.com',
       'localhost',
-      '127.0.0.1'
+      '127.0.0.1',
+      'www.lunaforge.us',
+      'lunaforge.us'
     ]
   },
   build: {
