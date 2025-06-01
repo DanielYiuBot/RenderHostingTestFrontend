@@ -8,9 +8,9 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: process.env.VITE_API_URL || 'http://localhost:8000',
+        target: 'https://whatsapp-chatbot-backend.onrender.com',
         changeOrigin: true,
-        secure: false,
+        secure: true,
       }
     }
   },
